@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">Custom QR</string>
+    <string name="app_tagline">Private, Encrypted &amp; Secure QR Platform</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_create">Create</string>
+    <string name="nav_scan">Scan</string>
+    <string name="nav_my_qr">My QR</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Dashboard -->
+    <string name="welcome_title">Custom QR</string>
+    <string name="welcome_subtitle">Zero-Leak Encrypted QR Engine</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="action_create_normal">Generate Standard QR</string>
+    <string name="action_create_private">Create Encrypted QR</string>
+    <string name="action_scan_camera">Scan QR Code</string>
+    <string name="action_device_pairing">Secure Device Pairing</string>
+    <string name="recent_history">Recent QR History</string>
+    <string name="view_all">View All</string>
+    <string name="security_status_title">Security Status</string>
+    <string name="security_status_desc">AES-256-GCM + PBKDF2 Active • 100% Offline</string>
+
+    <!-- QR Generator -->
+    <string name="generator_title">Create QR Code</string>
+    <string name="qr_type_text">Plain Text</string>
+    <string name="qr_type_url">Website URL</string>
+    <string name="qr_type_wifi">Wi-Fi</string>
+    <string name="qr_type_contact">Contact (vCard)</string>
+    <string name="qr_type_phone">Phone</string>
+    <string name="qr_type_email">Email</string>
+    <string name="qr_type_sms">SMS</string>
+    <string name="qr_type_whatsapp">WhatsApp</string>
+    <string name="qr_type_location">Location</string>
+    <string name="qr_type_custom">Custom Data</string>
+    <string name="qr_type_private">Private Encrypted QR</string>
+
+    <string name="label_content">Content / Payload</string>
+    <string name="hint_enter_content">Enter text or data to encode...</string>
+    <string name="hint_url">https://example.com</string>
+    <string name="hint_ssid">Network Name (SSID)</string>
+    <string name="hint_wifi_password">Wi-Fi Password</string>
+    <string name="hint_name">Full Name</string>
+    <string name="hint_phone">Phone Number (+880...)</string>
+    <string name="hint_email">Email Address</string>
+
+    <!-- Private QR Encryption -->
+    <string name="private_qr_heading">Private QR Protection</string>
+    <string name="private_mode_password">Password Protection</string>
+    <string name="private_mode_paired">Paired Device Only</string>
+    <string name="label_password">Encryption Password</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="hint_password">Enter strong password</string>
+    <string name="hint_confirm_password">Re-enter password</string>
+    <string name="error_password_mismatch">Passwords do not match.</string>
+    <string name="error_password_empty">Password cannot be empty.</string>
+    <string name="error_password_short">Password must be at least 6 characters.</string>
+    <string name="private_qr_warning">Private QR codes cannot be read by generic scanners. Scanners will see an encrypted envelope.</string>
+
+    <!-- Customization -->
+    <string name="customize_title">Customize Design</string>
+    <string name="label_fg_color">Foreground Color</string>
+    <string name="label_bg_color">Background Color</string>
+    <string name="label_error_correction">Error Correction (ECC)</string>
+    <string name="label_qr_size">QR Resolution</string>
+    <string name="label_margin">Quiet Zone Margin</string>
+    <string name="label_frame_style">Frame Style</string>
+    <string name="btn_generate">Generate QR Code</string>
+    <string name="btn_save_png">Save as PNG</string>
+    <string name="btn_share">Share Image</string>
+    <string name="btn_save_db">Save to My QR</string>
+
+    <!-- Scanner -->
+    <string name="scanner_title">Scan QR Code</string>
+    <string name="scanner_prompt">Align QR code inside the frame to scan</string>
+    <string name="btn_flashlight">Flashlight</string>
+    <string name="btn_camera_flip">Switch Camera</string>
+    <string name="btn_pick_gallery">Scan from Gallery</string>
+
+    <!-- Unlock Dialog -->
+    <string name="unlock_title">Private Encrypted QR</string>
+    <string name="unlock_desc">This QR code is encrypted with AES-256-GCM. Enter the secret password to decrypt its contents.</string>
+    <string name="btn_decrypt">Decrypt &amp; View</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="error_decryption_failed">Decryption failed: Incorrect password or corrupted payload.</string>
+    <string name="unlock_success">Successfully Decrypted</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">Secure Device Pairing</string>
+    <string name="pairing_tab_initiator">Device A (Initiator)</string>
+    <string name="pairing_tab_receiver">Device B (Receiver)</string>
+    <string name="pairing_initiator_instruction">Scan this one-time pairing QR code with Device B to establish an ECDH shared secret.</string>
+    <string name="pairing_receiver_instruction">Scan Device A\'s pairing QR code to generate an encrypted response.</string>
+    <string name="label_session_id">Session ID</string>
+    <string name="label_fingerprint">Key Fingerprint</string>
+    <string name="btn_scan_initiator">Scan Device A\'s QR</string>
+    <string name="btn_scan_response">Scan Device B\'s Response</string>
+    <string name="pairing_success">Device paired successfully!</string>
+    <string name="pairing_expired">Pairing session expired. Please regenerate.</string>
+    <string name="paired_devices_title">Paired Devices</string>
+    <string name="empty_paired_devices">No paired devices found.</string>
+    <string name="btn_unpair">Unpair</string>
+    <string name="btn_revoke">Revoke Access</string>
+
+    <!-- My QR & History -->
+    <string name="my_qr_title">My QR Codes</string>
+    <string name="tab_all">All</string>
+    <string name="tab_normal">Standard</string>
+    <string name="tab_private">Encrypted</string>
+    <string name="tab_favorites">Favorites</string>
+    <string name="history_title">QR History</string>
+    <string name="history_scanned">Scanned</string>
+    <string name="history_generated">Generated</string>
+    <string name="btn_clear_history">Clear History</string>
+    <string name="empty_qr_list">No QR codes found</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="section_appearance">Appearance</string>
+    <string name="section_security">Security</string>
+    <string name="section_storage">Storage</string>
+    <string name="section_about">About Custom QR</string>
+    <string name="pref_theme">Dark Mode</string>
+    <string name="pref_auto_lock">Auto-Lock Sensitive Data</string>
+    <string name="pref_clipboard_privacy">Clipboard Privacy (Auto-wipe after 30s)</string>
+    <string name="pref_clear_cache">Clear Cache &amp; Export Data</string>
+    <string name="app_version">Version 1.0.0 (API 22–34 Native)</string>
+</resources>

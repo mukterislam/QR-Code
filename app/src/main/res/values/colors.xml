@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Primary Colors -->
+    <color name="primary">#2563EB</color>
+    <color name="primary_variant">#1D4ED8</color>
+    <color name="on_primary">#FFFFFF</color>
+
+    <!-- Accent Colors (Blue, Purple, Cyan) -->
+    <color name="accent_blue">#3B82F6</color>
+    <color name="accent_purple">#8B5CF6</color>
+    <color name="accent_cyan">#06B6D4</color>
+    <color name="accent_emerald">#10B981</color>
+
+    <!-- Light Theme Palette -->
+    <color name="background_light">#F8FAFC</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="surface_subtle_light">#F1F5F9</color>
+    <color name="text_primary_light">#0F172A</color>
+    <color name="text_secondary_light">#64748B</color>
+    <color name="border_light">#E2E8F0</color>
+
+    <!-- Dark Theme Palette -->
+    <color name="background_dark">#0B0F19</color>
+    <color name="surface_dark">#131B2E</color>
+    <color name="surface_card_dark">#18233C</color>
+    <color name="surface_subtle_dark">#1E293B</color>
+    <color name="text_primary_dark">#F8FAFC</color>
+    <color name="text_secondary_dark">#94A3B8</color>
+    <color name="border_dark">#1E293B</color>
+
+    <!-- State & Semantic Colors -->
+    <color name="success">#10B981</color>
+    <color name="error">#EF4444</color>
+    <color name="warning">#F59E0B</color>
+    <color name="shield_encrypted">#8B5CF6</color>
+    <color name="shield_secure">#06B6D4</color>
+
+    <!-- Overlay & Gradients -->
+    <color name="gradient_start">#1D4ED8</color>
+    <color name="gradient_mid">#7C3AED</color>
+    <color name="gradient_end">#0284C7</color>
+    <color name="scrim_overlay">#80000000</color>
+</resources>

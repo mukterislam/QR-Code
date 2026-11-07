@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mkr.custom_qr">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <!-- Storage permissions for saving/loading QR images (Offline) -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"
+        tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+
+    <application
+        android:name=".CustomQRApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_my_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_my_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CustomQR"
+        tools:targetApi="34">
+
+        <!-- Main Launcher Dashboard Activity -->
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- QR Generator Activity -->
+        <activity
+            android:name=".activities.QRGeneratorActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Real-time QR Scanner Activity -->
+        <activity
+            android:name=".activities.QRScannerActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!-- Cryptographic Password Unlock Activity -->
+        <activity
+            android:name=".activities.PasswordUnlockActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <!-- Secure Device Pairing Activity -->
+        <activity
+            android:name=".activities.PairingActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Paired Devices Management Activity -->
+        <activity
+            android:name=".activities.PairedDevicesActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- My QR Codes Management Activity -->
+        <activity
+            android:name=".activities.MyQRActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Scan & Generation History Activity -->
+        <activity
+            android:name=".activities.QRHistoryActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- QR Code Details & Actions Activity -->
+        <activity
+            android:name=".activities.QRDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <!-- FileProvider for Sharing QR Images -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

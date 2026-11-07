@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface_dark">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_pairing"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:title="@string/pairing_title"
+            app:titleTextColor="@color/text_primary_dark" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout_pairing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/surface_dark"
+            app:tabIndicatorColor="@color/accent_emerald"
+            app:tabSelectedTextColor="@color/accent_emerald"
+            app:tabTextColor="@color/text_secondary_dark">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pairing_tab_initiator" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pairing_tab_receiver" />
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Initiator Container -->
+            <LinearLayout
+                android:id="@+id/layout_initiator_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="@string/pairing_initiator_instruction"
+                    android:textColor="@color/text_secondary_dark"
+                    android:textSize="13sp" />
+
+                <!-- Session Pairing QR Code -->
+                <ImageView
+                    android:id="@+id/iv_pairing_qr"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/surface_dark"
+                    android:contentDescription="Pairing Session QR Code"
+                    android:padding="8dp" />
+
+                <!-- Fingerprint Display -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_fingerprint"
+                    android:textColor="@color/text_secondary_dark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_initiator_fingerprint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="monospace"
+                    android:text="E2:8A:4F:9C:11:3D"
+                    android:textColor="@color/accent_emerald"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <!-- Step 2 Button: Scan Device B Response -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_scan_device_b_response"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="@string/btn_scan_response"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/accent_emerald" />
+            </LinearLayout>
+
+            <!-- Receiver Container -->
+            <LinearLayout
+                android:id="@+id/layout_receiver_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text="@string/pairing_receiver_instruction"
+                    android:textColor="@color/text_secondary_dark"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_scan_device_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/btn_scan_initiator"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/accent_blue" />
+
+                <ImageView
+                    android:id="@+id/iv_receiver_response_qr"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/surface_dark"
+                    android:contentDescription="Receiver Response QR Code"
+                    android:padding="8dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_receiver_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/accent_emerald"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
